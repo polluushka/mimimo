@@ -1,0 +1,263 @@
+@font-face {
+    font-family: "Montserrat-Medium";
+    src: url("../fonts/Montserrat/Montserrat-Medium.ttf") format("woff2")
+
+}
+
+@font-face {
+    font-family: "CormorantInfant-SemiBold";
+    src: url("../fonts/Cormorant_Infant/CormorantInfant-SemiBold.ttf") format("woff2")
+}
+
+@font-face {
+    font-family: "CormorantInfant-Light";
+    src: url("../fonts/Cormorant_Infant/CormorantInfant-Light.ttf") format("woff2")
+}
+
+@font-face {
+    font-family: "CormorantInfant-LightItalic";
+    src: url("../fonts/Cormorant_Infant/CormorantInfant-LightItalic.ttf") format("woff2")
+}
+
+@font-face {
+    font-family: "CormorantInfant-Bold";
+    src: url("../fonts/Cormorant_Infant/CormorantInfant-Bold.ttf") format("woff2")
+}
+
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: url("../img/background.jpg");
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    max-width: 1200px;
+    width: 1200px;
+    margin: auto;
+    padding: auto;
+}
+
+header{
+    padding-top: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .first-block-header,
+header .second-block-header,
+header .logo{
+    display: flex;
+    align-items: center;
+}
+
+
+header .first-block-header a:nth-child(2),
+header .second-block-header a:nth-child(2), header .second-block-header a:nth-child(3){
+    padding-left: 40px;
+}
+
+header .first-block-header a,
+header .second-block-header a{
+    font-family: 'Montserrat-Medium', sans-serif;
+    color: #988f87;
+    font-size: 18px;
+}
+
+header .logo a{
+    font-family: 'CormorantInfant-SemiBold';
+    font-size: 28px;
+    color: #756b62;
+}
+
+.main-screen{
+    position: relative;
+}
+
+.main-screen .images h1{
+    font-family: 'CormorantInfant-Light';
+    font-weight: 100;
+    color: #756b62;
+    font-size: 100px;
+}
+
+.main-screen .images{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 65px;
+}
+
+.main-screen .images img:first-child{
+    position: absolute;
+    width: 20%;
+}
+
+.main-screen .images .image-group h1:nth-child(2){
+    position: absolute;
+    z-index: 1;
+    transform: translateY(125%);
+    padding-left: 30px;
+}
+
+.main-screen .images .image-group img:nth-child(3){
+    position: absolute;
+    transform: translateY(405%);
+    padding-left: 200px;
+    opacity: 1;
+
+}
+
+
+.main-screen .images img:nth-child(2){
+    position: absolute;
+    align-self: flex-end;
+    width: 50%;
+    margin: 100px 70px 0 0;
+}
+
+.main-screen .images img:nth-child(3){
+    position: absolute;
+    align-self: flex-end;
+    transform: translateY(560%);
+    opacity: 0.5;
+}
+
+.love{
+    display: flex;
+    margin-top: 1000px;
+    color: #988f87;
+    font-family: 'CormorantInfant-LightItalic';
+    font-size: 35px;
+    justify-content: center;
+    position: relative;
+}
+
+.love h2{
+    font-weight: 100;
+}
+
+.love h2 span{
+    font-family: 'CormorantInfant-Bold';
+    color: #746a62;
+    z-index: 1;
+}
+
+.love img{
+    position: absolute;
+    transform: translateX(295%);
+}
+
+
+
+
+
+
+.collection{
+    margin-top: 90px;
+}
+
+.collection .title{
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat-Medium';
+    color: #988f87;
+}
+
+.collection .title h3{
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-left: 20px;
+    font-size:  18px;
+}
+
+
+
+
+
+
+.collection .sliders .CSSgal {
+    position: relative;
+    overflow: hidden;
+}
+
+.collection .sliders .CSSgal .slider .num .ps{
+    display: flex;
+    flex-direction: column;
+}
+
+/* SLIDER */
+.collection .sliders .CSSgal .slider {
+    transition: 0.8s;
+    height: 100%;
+    white-space: nowrap;
+    font-size: 0;
+}
+
+/* SLIDES */
+.collection .sliders .CSSgal .slider>* {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+/* NAVIGATION */
+.collection .sliders .CSSgal .bullets {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.collection .sliders .CSSgal .bullets a {
+    width: 20px;
+    height: 10px;
+    border-radius: 10px;
+    transition: .5s;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.collection .sliders .CSSgal .bullets a:hover {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+#s1:target~.bullets *:nth-child(1),
+#s2:target~.bullets *:nth-child(2),
+#s3:target~.bullets *:nth-child(3),
+#s4:target~.bullets *:nth-child(4){
+    background: rgba(255, 255, 255, 1);
+    width: 60px;
+}
+
+/* SLIDER ANIMATION POSITIONS */
+#s1:target~.slider {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+}
+
+#s2:target~.slider {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+}
+
+#s3:target~.slider {
+    transform: translateX(-200%);
+    -webkit-transform: translateX(-200%);
+}
+
+#s4:target~.slider {
+    transform: translateX(-300%);
+    -webkit-transform: translateX(-300%);
+}
+
+
+
